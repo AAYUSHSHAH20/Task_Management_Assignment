@@ -16,16 +16,19 @@ export default function TaskForm({ refresh }: any) {
   };
 
   return (
-    <form onSubmit={addTask} className="flex gap-2">
-      <input
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-        placeholder="New task..."
-        className="flex-1 p-3 border rounded-lg"
-      />
-      <button className="bg-indigo-600 text-white px-6 rounded-lg">
-        Add
-      </button>
-    </form>
+    <div className="task-form-card">
+      <div className="task-form-title">New task</div>
+      <form onSubmit={addTask} className="task-form-row">
+        <input
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          placeholder="New task..."
+          className="task-form-input"
+        />
+        <button type="submit" className="task-form-btn">
+          Add
+        </button>
+      </form>
+    </div>
   );
 }

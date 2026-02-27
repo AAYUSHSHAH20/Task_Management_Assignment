@@ -19,7 +19,8 @@ export default function Dashboard() {
       const res = await api.get("/tasks", {
         params: { search, status, page: 1, limit: 10 },
       });
-      setTasks(res.data.tasks);
+      // Backend returns an array of tasks directly
+      setTasks(res.data);
     } catch {
       toast.error("Failed to load tasks");
     }
