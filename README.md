@@ -4,6 +4,13 @@ This repo contains a simple task management app with:
 - **Backend**: Node.js + Express + Prisma + PostgreSQL (JWT auth)
 - **Frontend**: Next.js (App Router) + Axios + Tailwind (custom CSS in `globals.css`)
 
+To start fresh, clone the project from GitHub:
+
+```bash
+git clone https://github.com/AAYUSHSHAH20/Task_Management_Assignment.git
+cd Task_Management_Assignment
+```
+
 ### Project structure
 
 - `task-management-backend/`: API server + Prisma schema/migrations
@@ -129,34 +136,4 @@ The backend returns an **array of tasks** from `GET /tasks`, so the dashboard fe
   - Confirm frontend is on `http://localhost:3000` and backend CORS origin matches it.
 - **Prisma can’t find `DATABASE_URL`**:
   - Confirm the `.env` file exists at `task-management-backend/.env` and restart the backend.
-
-## Task Management Assignment
-
-### Run with Docker (recommended)
-
-Prereqs:
-- Docker Desktop
-
-From the repository root:
-
-```bash
-docker compose up --build
-```
-
-Then open:
-- Frontend: `http://localhost:3000`
-- Backend: `http://localhost:5000`
-
-This compose file also starts PostgreSQL and runs Prisma migrations automatically on backend startup.
-
-### Environment variables
-
-Docker uses these defaults in `docker-compose.yml`:
-- **Postgres**: user `postgres`, password `postgres`, db `task_management_db`
-- **Backend**: `DATABASE_URL` points at the `db` container
-- **Frontend**: `NEXT_PUBLIC_API_URL=http://localhost:5000`
-
-If you want to change secrets, edit these in `docker-compose.yml`:
-- `ACCESS_SECRET`
-- `REFRESH_SECRET`
 
